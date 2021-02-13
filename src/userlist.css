@@ -1,0 +1,39 @@
+/*  */
+:root {
+  --grncol: #30bbb5;
+}
+.results,
+.results:hover {
+  text-decoration: none !important;
+  color: rgba(38, 42, 65, 0.52);
+}
+
+.results i {
+  color: var(--grncol);
+  font-size: 20px;
+  font-weight: lighter;
+  padding-right: 5px;
+}
+
+.spc span {
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.spc {
+  padding: 10px 0;
+}
+.jnda1 {
+  background-color: #0000000d;
+}
+
+.jnd {
+  background-color: rgba(249, 53, 169, 0.15);
+}
+
+.con .fa {
+  padding-right: 5px;
+}
+
+/* .pagination{
+  display: none;
+} */

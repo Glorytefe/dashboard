@@ -1,0 +1,241 @@
+/* font import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,500;0,700;1,300;1,500&display=swap");
+/* variables */
+:root {
+  --bkground: rgba(38, 42, 65, 1) 0% 0% no-repeat padding-box;
+  --bkground1: rgba(247, 247, 255, 1) 0% 0% no-repeat padding-box;
+  --white: #ffffff;
+  --alluserbtn: #f935a9;
+  --maleuserbtn: #30bbb5;
+  --femaleuserbtn: #7946c1;
+  --imgborder: #75d6d1;
+}
+/* setting bkcolo and font */
+.canvas {
+  background: var(--bkground);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem 2rem;
+}
+/* first column */
+.conta {
+  min-height: 90vh;
+  padding: 1rem;
+}
+
+.cont {
+  background: var(--bkground1);
+  border-radius: 20px;
+}
+.flx {
+  margin-top: 5rem;
+}
+/* search box */
+.searchs {
+  padding-top: 20px;
+}
+.searchs input {
+  background: rgb(60, 63, 84) 0% 0% no-repeat padding-box;
+  width: 350px;
+  max-width: 100%;
+  height: 60px;
+  border-radius: 19px;
+  border: none;
+  outline: none;
+  color: var(--white);
+  padding: 5px 5px 5px 20px;
+  letter-spacing: 1px;
+}
+.searchs input::placeholder {
+  color: var(--white);
+}
+/* search ends */
+
+/* user tabs */
+.flxn {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-between;
+}
+.flxn p {
+  font-size: 10px;
+  text-align: center;
+}
+.flxn button {
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 70px;
+  height: 70px;
+  outline: none !important;
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  transition: 5ms ease-in 10ms;
+}
+.flxn button:focus {
+  transform: scale(1.4);
+  transition: 5ms ease-in 10ms;
+  box-shadow: 1px 2px 4px 3px rgba(190, 199, 252, 0.1);
+}
+.use {
+  background-color: var(--alluserbtn);
+}
+.mal {
+  background-color: var(--maleuserbtn);
+}
+.fem {
+  background-color: var(--femaleuserbtn);
+}
+/* user tabs ends */
+
+/* first column ends */
+
+/* second column starts*/
+.conts {
+  color: #262a41;
+  padding: 3rem 1rem;
+}
+
+.fms input,
+.fms select {
+  background-color: rgba(60, 63, 84, 0.11);
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+}
+/* country input styles */
+.fms select {
+  margin: 10px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, black 50%),
+    linear-gradient(135deg, black 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+  width: 110px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 12px;
+  color: rgba(38, 42, 65, 0.8);
+}
+/* toggle btn */
+.tggle {
+  font-size: 1.1rem;
+  display: inline-block !important;
+  margin-left: 10px;
+}
+.tggle label {
+  font-size: 0.7rem;
+}
+.tggle input {
+  box-shadow: none !important;
+}
+.tggle input:checked {
+  background-color: var(--maleuserbtn);
+}
+/* contents for user */
+.conten {
+  width: 90%;
+  margin: 15px auto;
+}
+
+.wdth {
+  width: 60%;
+  border: 4px solid var(--imgborder);
+}
+
+.flexspan {
+  float: right;
+  display: flex;
+  align-items: flex-end;
+  height: 80%;
+}
+.flexspan i {
+  color: var(--white);
+  background-color: var(--maleuserbtn);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 8px 10px rgba(48, 187, 181, 0.455);
+}
+
+.ftsm {
+  font-size: 13px;
+}
+.shallm {
+  box-shadow: 1px 2px 3px 4px rgba(190, 199, 252, 0.3);
+  margin: 20px auto;
+  padding-bottom: 10px;
+}
+/* download btn division */
+.downloads {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.bkpur {
+  background-color: var(--femaleuserbtn);
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 2px 8px 10px #0000001a;
+  cursor: pointer;
+}
+
+.downloads ul li {
+  margin: 0 12px 0 0;
+  width: 40px;
+  text-align: center;
+}
+
+.downloads ul li a {
+  font-weight: bolder;
+  border-radius: 8px !important;
+  font-size: 18px !important;
+  color: #323874;
+}
+.downloads ul li a:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: #262a41;
+  color: var(--white) !important;
+  box-shadow: 2px 8px 10px #0000001a;
+}
+/* pagination */
+.naviga {
+  /* margin-top: 1.5rem; */
+  margin-left: auto;
+  cursor: pointer;
+}
+/* second column ends */
+
+/* media query */
+@media screen and (min-width: 950px) {
+  .flx {
+    margin-top: 2rem;
+    position: absolute;
+    top: 12rem;
+  }
+  .flxn {
+    width: 80%;
+  }
+  .wdth {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+  }
+  .fms select {
+    margin: 0 0 0 10px;
+  }
+ 
+  /* .naviga {
+    margin: 0;
+  } */
+}
