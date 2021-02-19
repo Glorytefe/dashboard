@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
 import Filter from "../form/filter";
 import { Link } from 'react-router-dom';
+import Searchall from './searchAll'
 
 
 export class alluser extends Component {
-    // constructor(props)
-    // componentDidMount(){
-    //     this.setState({
-    //         all:this.props.all
-    //     })
-    // }
+  //   constructor(props){
+  //   super(props)
+  //   this.state={
+  //           searchItem: '' ,
+  //   }
+  // }
+  
     
     render() {
-console.log(this.props);
+//   const setSearchs = (e) =>
 
-const {all , loading} = this.props
+// this.setState({
+//   searchItem: e.target.value,
+// })
 
-        if(!loading){
-           return  <div className="text-center">
-           Loading....
-       </div>
+const {all , localData, searchItem, setSearch} = this.props;
+console.log(searchItem);
+
+
+        if(searchItem !== ''){
+           return  <Searchall localData={localData} searchItem={searchItem} />
         }
-        else{
+        else if (searchItem === ""){
             return (
                 <div className="">
                 
@@ -31,12 +37,12 @@ const {all , loading} = this.props
                         <h3>All Users</h3>
                         <small>Filter by</small>
                         {/* forms */}
-                        <Filter/>
+                        <Filter searchItem={searchItem} setSearch={setSearch} />
            </div>
                         
                          </div>
                 {/* first user */}
-                {all.map((item, i) => (
+                {all.map((item) => (
 
             
                 <div className="row shallm" key={item.cell}>
@@ -51,8 +57,9 @@ const {all , loading} = this.props
                                 &nbsp; {item.email}</small><small><i className="fa fa-volume-control-phone px-2" aria-hidden="true" />{item.cell}</small></span>
                           </div>
                           <div className="col-md-1 col-lg-2 col-sm-1">
-                            <Link to={`/user/${item.cell}`}>
-                              <span className="flexspan"><i className="fa fa-arrow-right" aria-hidden="true" /></span></Link>
+                             <Link to={`/users/${item.cell}`} >
+                              <span className="flexspan"><i className="fa fa-arrow-right" aria-hidden="true" /></span>
+                              </Link>
                           </div>
                 </div>
                 ))}

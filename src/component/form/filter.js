@@ -1,13 +1,26 @@
 import React, { Component } from 'react'
 
 export class filter extends Component {
+  // constructor(props){
+  //   super(props)
+  //   this.state={
+  //           searchItem: '' ,
+  //   }
+  // }
     render() {
-        return (
-         
-
+//       const setSearch = (e) =>{
+// const searchs = e.target.value;
+// this.setState({
+//   searchItem: searchs,
+// })
+// }
+      const { setSearch, searchItem } = this.props;
+      // const sear = e
+      console.log(this.state);
+        return ( 
              <div className="pt-3"> 
               <form >
-                <input type="text" placeholder="      Find a user" style={{fontFamily: 'Arial, FontAwesome', height: 40}} />
+                <input value={searchItem} onChange={(e)=>setSearch(e)} type="text" placeholder="      Find a user" style={{fontFamily: 'Arial, FontAwesome', height: 40}}  />
                 <select style={{height: 40}}>
                   <option value={1}>Country</option>
                   <option value={2}>Nigeria</option>

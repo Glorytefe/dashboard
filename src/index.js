@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import Maleusers from './component/pages/maleuser'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    {/* <Maleusers/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

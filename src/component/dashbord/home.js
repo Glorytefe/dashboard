@@ -1,23 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Search from '../form/search.js'
 
+import { Link } from 'react-router-dom';
+import React from 'react'
 
 export default function home() {
-    return (
-        <div>
-         
-      {/* first column */}
-     
-        <div className="flx">
-          <h4 className="fw-light">Hello, <b>Emerald</b></h4>
-          <p>
-            Welcome to your dashboard, kindly sort through the user base
-          </p>
-          {/* search */}
-          <Search/>
+  return (
+    <div>
+           
           <div className="cord">
             <p className="pt-5 pb-4">Show Users</p>
+            
+
             {/* button tabs for users */}
             <div className="flxn">
               <div>
@@ -43,18 +35,25 @@ export default function home() {
                   </button>
               </Link>
                
-                
-               
                 <p>Female Users</p>
               </div>
             </div>
           </div>
-        </div>
+      
    
       {/* first column ends */}
      
 
 
         </div>
-    )
+        
+   
+    
+  )
 }
+
+
+
+
+
+

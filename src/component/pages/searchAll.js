@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
-import Filter from "../form/filter";
 import { Link } from 'react-router-dom';
-import Searchall from './searchAll'
+import Filter from "../form/filter";
+import Pagination from '../buttons/pagination'
+import Download  from '../buttons/downloadbtn'
+
+class searchAll extends Component {
+      constructor(props){
+      super(props)
+      this.state={
+        currentPage: 1,
+        postsPerPage: 3,
+      }
+    }
+  render() {
 
 
-export class femaleuser extends Component {
-   
-    render() {
-      
-const {female , localData, searchItem, nextPage, prevPage} = this.props;
+const { localData, searchItem} = this.props;
+const{ currentPage, postsPerPage} = this.state;
+const news = localData.filter(val =>val.name.first.toLowerCase().includes(searchItem.toLowerCase()));
+console.log(news);
+
+ const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+    const nextPage = () => this.setState({ currentPage: currentPage + 1 });
+
+    const prevPage = () => this.setState({ currentPage: currentPage - 1 });
+
+     // all user page
+    const currentSearch = news.slice(indexOfFirstPost, indexOfLastPost);
 
 
-        if(searchItem !== ''){
-           return  <Searchall localData={localData} searchItem={searchItem} nextPage={nextPage} prevPage={prevPage}/>
-        }
-        else if (searchItem === ""){
-            return (
-                <div className="">
-                
-                 <div className="conts">
+    return (
+       <div className="conts">
                            
                     <div className="fms">
                         <h3>All Users</h3>
@@ -26,13 +40,9 @@ const {female , localData, searchItem, nextPage, prevPage} = this.props;
                         {/* forms */}
                         <Filter/>
            </div>
-                        
-                         </div>
-                {/* first user */}
-                {female.map((item) => (
-
-            
-                <div className="row shallm" key={item.cell}>
+           {currentSearch.map((item)=>(
+             
+   <div className="row shallm" key={item.cell}>
                   <div className="col-md-4 col-lg-2 col-sm-4 py-3">
                             <img src={item.picture.thumbnail} className="wdth img-responsive rounded-circle" alt="" />
                           </div>
@@ -49,16 +59,19 @@ const {female , localData, searchItem, nextPage, prevPage} = this.props;
                               </Link>
                           </div>
                 </div>
-                ))}
-                    {/*  donwnload  */}
-            
-              </div>
-          
-            )
-        }
+             
+           ))}
+        
+               <div className="downloads pt-3">
+               <Download/>
+          <Pagination postsPerPage={postsPerPage} totalPosts={news.length} currentPage={currentPage} nextPage={nextPage} prevPage={prevPage} />
 
-      
-    }
+           </div>
+        
+
+      </div>
+    );
+  }
 }
 
-export default femaleuser
+export default searchAll;

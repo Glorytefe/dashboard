@@ -31,7 +31,7 @@ export class pagination extends Component {
             </nav>
           </div>
         }
-        if (currentPage >= pageNumbers.length){
+        else if (currentPage >= pageNumbers.length){
             return <div className="naviga navss">
                     <nav aria-label="Page navigation example">
                     <ul className="pagination">
